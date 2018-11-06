@@ -343,7 +343,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 mPasswordView.requestFocus();
             }
         }
-
+// benny testing
         @Override
         protected void onCancelled() {
             mAuthTask = null;
