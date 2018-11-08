@@ -19,7 +19,6 @@ import android.widget.Toast;
  */
 public class IndicateInterestActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private TextView mTextMessage;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -31,10 +30,10 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_dashboard:
-                    startActivity(new Intent(MainActivity.this, Donate.class));
+                    startActivity(new Intent(IndicateInterestActivity.this, Donate.class));
                     return true;
                 case R.id.navigation_notifications:
-                    startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                    startActivity(new Intent(IndicateInterestActivity.this, MapsActivity.class));
                     return true;
             }
             return false;
@@ -48,11 +47,10 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
         setContentView(R.layout.activity_indicate_interest);
 
         Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations,android.R.layout.simple_spinner_item)
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

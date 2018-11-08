@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mEditProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Donate.class));;
+                startActivity(new Intent(MainActivity.this, EditProfile.class));
             }
         });
 
