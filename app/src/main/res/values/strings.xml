@@ -21,5 +21,13 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="user_name">John Tan</string>
+    <string name="title_activity_indicate_interest">IndicateInterest</string>
+    <string-array name="locations">
+        <item> North</item>
+        <item> South</item>
+        <item> East</item>
+        <item> West</item>
+        <item> Central</item>
+    </string-array>
     <string name="title_activity_edit_profile">EditProfile</string>
 </resources>

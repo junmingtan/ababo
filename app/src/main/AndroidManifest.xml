@@ -57,6 +57,10 @@
         <activity
             android:name=".EditProfile"
             android:label="@string/title_activity_edit_profile"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".IndicateInterestActivity"
+            android:label="@string/title_activity_indicate_interest"></activity>
     </application>
 
 </manifest>
