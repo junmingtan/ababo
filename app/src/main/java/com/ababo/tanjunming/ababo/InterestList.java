@@ -102,60 +102,61 @@ public void removeObserver(Donor o , String location) {
 }
 
     @Override
-    // call when the notify button is pressed , take in a input string
-    public void notifyObserver(String location, String annoucement) {
+    // call when the notify button is pressed , take in a input string and the corresponding location
+    public void notifyObserver(String location, String anncmt) {
 
 
         switch (location) {
 
             case "North":
-                for ( Donor o : north){
-                    o.update(annoucement);
+                for (Donor o : north) {
+                    o.update(anncmt);
                 }
                 break;
 
             case "South":
-                for ( Donor o : south){
-                    o.update(annoucement);
+                for (Donor o : south) {
+                    o.update(anncmt);
                 }
                 break;
 
             case "East":
-                for ( Donor o : east){
-                    o.update(annoucement);
+                for (Donor o : east) {
+                    o.update(anncmt);
                 }
                 break;
 
             case "West":
-                for ( Donor o : west){
-                    o.update(annoucement);
+                for (Donor o : west) {
+                    o.update(anncmt);
                 }
                 break;
 
             case "Central":
-                for ( Donor o : central){
-                    o.update(annoucement);
-                break;
+                for (Donor o : central) {
+                    o.update(anncmt);
+                    break;
 
+                }
         }
     }
+        // run on create to get the number of donor interested in the location
 
-    // run on create to get the number of donor interested in the location
-    public int returnNorthsize(){
-        return north.size();
-    }
-    public int returnSouthsize (){
-        return south.size();
-    }
-    public int returnEastsize (){
-        return east.size();
-    }
-    public int returnWesthsize (){
-        return west.size();
-    }
-    public int returnCentralsize(){
-        return central.size();
-    }
+        public int returnNorthsize () {
+            return north.size();
+        }
+        public int returnSouthsize () {
+            return south.size();
+        }
+        public int returnEastsize () {
+            return east.size();
+        }
+        public int returnWesthsize () {
+            return west.size();
+        }
+        public int returnCentralsize () {
+            return central.size();
+        }
 
 
 }

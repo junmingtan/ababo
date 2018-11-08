@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class IndicateInterest extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class IndicateInterestActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView mTextMessage;
 
