@@ -3,7 +3,9 @@ package com.ababo.tanjunming.ababo;
 import java.util.ArrayList;
 import java.lang.String ;
 
-
+/**
+ * included the comments before each functions
+ */
 public class InterestList implements InterestSubjectInterface {
 
     private ArrayList<Donor> north = new ArrayList<Donor>();

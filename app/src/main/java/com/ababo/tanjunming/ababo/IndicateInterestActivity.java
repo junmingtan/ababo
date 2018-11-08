@@ -13,6 +13,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+/**
+ *  yet to add constraints to the xml files esp to the buttons and the test view file
+ */
 public class IndicateInterestActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView mTextMessage;
@@ -56,7 +60,7 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position , long l) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text , Toast)
+        Toast.makeText(parent.getContext(), text , Toast.LENGTH_SHORT).show();
     }
 
     @Override
