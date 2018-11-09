@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.lang.String ;
 
 /**
- * included the comments before each functions
+ * entity class that stores all the interested donors
  */
 public class InterestList implements InterestSubjectInterface {
 
@@ -116,7 +116,7 @@ public void removeObserver(Donor o , String location) {
 }
 
     @Override
-    // call when the notify button is pressed , take in a input string and the corresponding location
+
     public void notifyObserver(String location, String anncmt) {
 
 
@@ -154,7 +154,7 @@ public void removeObserver(Donor o , String location) {
                 }
         }
     }
-        // run on create to get the number of donor interested in the location
+
 
         public int returnNorthsize () {
             return north.size();
@@ -165,7 +165,7 @@ public void removeObserver(Donor o , String location) {
         public int returnEastsize () {
             return east.size();
         }
-        public int returnWesthsize () {
+        public int returnWestsize () {
             return west.size();
         }
         public int returnCentralsize () {
