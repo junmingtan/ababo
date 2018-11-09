@@ -14,7 +14,20 @@ public class InterestList implements InterestSubjectInterface {
     private ArrayList<Donor> west = new ArrayList<Donor>();
     private ArrayList<Donor> central = new ArrayList<Donor>();
 
-    @Override  // calls this when user indicated interest , takes in the donor information and the location of interest
+    private static InterestList instance;
+    private InterestList(){}
+    public static InterestList getInstance(){
+        if(instance == null){
+            synchronized (InterestList.class) {
+                instance = new InterestList();
+            }
+        }
+        return instance;
+    }
+
+
+
+    @Override
 public void addObserver (Donor o , String location ){
     boolean e;
     switch (location){
@@ -58,7 +71,6 @@ public void addObserver (Donor o , String location ){
     }
 }
     @Override
-// call when the withdraw interest button is pressed
 public void removeObserver(Donor o , String location) {
 
     boolean e;

@@ -9,6 +9,6 @@ public class Donor implements DonorObsInterface {
 
     @Override
     public void update(String anncmt) {
-    // receive a notiff which is the annoucment 
+    // receive a notif which is the annoucment
     }
 }
