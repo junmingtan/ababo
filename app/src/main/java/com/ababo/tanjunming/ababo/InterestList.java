@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.lang.String ;
 
 /**
- * included the comments before each functions
+ * entity class that stores all the interested donors
  */
 public class InterestList implements InterestSubjectInterface {
 
@@ -14,7 +14,20 @@ public class InterestList implements InterestSubjectInterface {
     private ArrayList<Donor> west = new ArrayList<Donor>();
     private ArrayList<Donor> central = new ArrayList<Donor>();
 
-    @Override  // calls this when user indicated interest , takes in the donor information and the location of interest
+    private static InterestList instance;
+    private InterestList(){}
+    public static InterestList getInstance(){
+        if(instance == null){
+            synchronized (InterestList.class) {
+                instance = new InterestList();
+            }
+        }
+        return instance;
+    }
+
+
+
+    @Override
 public void addObserver (Donor o , String location ){
     boolean e;
     switch (location){
@@ -58,7 +71,6 @@ public void addObserver (Donor o , String location ){
     }
 }
     @Override
-// call when the withdraw interest button is pressed
 public void removeObserver(Donor o , String location) {
 
     boolean e;
@@ -104,7 +116,7 @@ public void removeObserver(Donor o , String location) {
 }
 
     @Override
-    // call when the notify button is pressed , take in a input string and the corresponding location
+
     public void notifyObserver(String location, String anncmt) {
 
 
@@ -142,7 +154,7 @@ public void removeObserver(Donor o , String location) {
                 }
         }
     }
-        // run on create to get the number of donor interested in the location
+
 
         public int returnNorthsize () {
             return north.size();
@@ -153,7 +165,7 @@ public void removeObserver(Donor o , String location) {
         public int returnEastsize () {
             return east.size();
         }
-        public int returnWesthsize () {
+        public int returnWestsize () {
             return west.size();
         }
         public int returnCentralsize () {
