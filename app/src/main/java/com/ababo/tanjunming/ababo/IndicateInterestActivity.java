@@ -28,12 +28,13 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    startActivity(new Intent(IndicateInterestActivity.this, MainActivity.class));
                     return true;
                 case R.id.navigation_dashboard:
                     startActivity(new Intent(IndicateInterestActivity.this, Donate.class));
                     return true;
                 case R.id.navigation_notifications:
-                    startActivity(new Intent(IndicateInterestActivity.this, MapsActivity.class));
+                    startActivity(new Intent(IndicateInterestActivity.this, Explore.class));
                     return true;
             }
             return false;

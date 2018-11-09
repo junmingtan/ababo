@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, Donate.class));
                     return true;
                 case R.id.navigation_notifications:
-                    startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                    startActivity(new Intent(MainActivity.this, Explore.class));
                     return true;
             }
             return false;
