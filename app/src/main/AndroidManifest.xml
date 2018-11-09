@@ -56,7 +56,8 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".IndicateInterestActivity"
-            android:label="@string/title_activity_indicate_interest"></activity>
+            android:label="@string/title_activity_indicate_interest" />
+        <activity android:name=".AdminInterestListViewerActivity"></activity>
     </application>
 
 </manifest>
