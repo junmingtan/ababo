@@ -1,7 +1,11 @@
 package com.ababo.tanjunming.ababo;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,6 +18,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    startActivity(new Intent(MapsActivity.this, MainActivity.class));
+                    return true;
+                case R.id.navigation_dashboard:
+                    startActivity(new Intent(MapsActivity.this, Donate.class));
+                    return true;
+                case R.id.navigation_notifications:
+                    startActivity(new Intent(MapsActivity.this, Explore.class));
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +46,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_notifications);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
 
@@ -39,8 +67,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng singapore = new LatLng(1.352083, 103.819830);
+        LatLng bloodBankWoodlands = new LatLng(1.435330, 103.787600);
+        LatLng bloodBankWestgate = new LatLng(1.334440, 103.742830);
+        LatLng bloodBankHSA = new LatLng(1.281040, 103.838950);
+        LatLng bloodBankDhoby = new LatLng(1.294460, 103.848070);
+
+        mMap.addMarker(new MarkerOptions().position(bloodBankWoodlands).title("Bloodbank@Woodlands"));
+        mMap.addMarker(new MarkerOptions().position(bloodBankWestgate).title("Bloodbank@Westgate Tower"));
+        mMap.addMarker(new MarkerOptions().position(bloodBankHSA).title("Bloodbank@HSA"));
+        mMap.addMarker(new MarkerOptions().position(bloodBankDhoby).title("Bloodbank@DhobyGhaut"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(singapore, 11.0f));
     }
 }

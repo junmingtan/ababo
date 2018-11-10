@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class Donate extends AppCompatActivity {
 
     private Button mIndicateInterestButton;
+    private Button mCheckEligibilityButton;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -38,6 +39,14 @@ public class Donate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
+
+        mCheckEligibilityButton = (Button) findViewById(R.id.checkelig);
+        mCheckEligibilityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Donate.this, CheckEligibility.class));
+            }
+        });
 
         mIndicateInterestButton = (Button) findViewById(R.id.indintr);
         mIndicateInterestButton.setOnClickListener(new View.OnClickListener() {
