@@ -69,7 +69,10 @@
         <activity android:name=".AdminInterestListViewerActivity" />
         <activity
             android:name=".CheckEligibility"
-            android:label="@string/title_activity_check_eligibility"></activity>
+            android:label="@string/title_activity_check_eligibility" />
+        <activity
+            android:name=".BookAppointment"
+            android:label="@string/title_activity_book_appointment"></activity>
     </application>
 
 </manifest>

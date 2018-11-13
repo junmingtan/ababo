@@ -14,6 +14,7 @@ public class Donate extends AppCompatActivity {
 
     private Button mIndicateInterestButton;
     private Button mCheckEligibilityButton;
+    private Button mBookAppointmentButton;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -45,6 +46,14 @@ public class Donate extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Donate.this, CheckEligibility.class));
+            }
+        });
+
+        mBookAppointmentButton = (Button) findViewById(R.id.bookappt);
+        mBookAppointmentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Donate.this, BookAppointment.class));
             }
         });
 

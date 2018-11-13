@@ -51,8 +51,9 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_dashboard);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
