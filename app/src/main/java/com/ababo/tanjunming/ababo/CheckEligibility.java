@@ -83,28 +83,27 @@ public class CheckEligibility extends AppCompatActivity {
     private boolean verifyEligibility(){
 
         boolean result = true;
-
         if(mRadioGroupQ1.getCheckedRadioButtonId() == R.id.qn1no)
             result = false;
-        if(mRadioGroupQ2.getCheckedRadioButtonId() == R.id.qn2no)
+        else if(mRadioGroupQ2.getCheckedRadioButtonId() == R.id.qn2no)
             result = false;
-        if(mRadioGroupQ3.getCheckedRadioButtonId() == R.id.qn3no)
+        else if(mRadioGroupQ3.getCheckedRadioButtonId() == R.id.qn3no)
             result = false;
-        if(mRadioGroupQ4.getCheckedRadioButtonId() == R.id.qn4yes)
+        else if(mRadioGroupQ4.getCheckedRadioButtonId() == R.id.qn4yes)
             result = false;
-        if(mRadioGroupQ5.getCheckedRadioButtonId() == R.id.qn5yes)
+        else if(mRadioGroupQ5.getCheckedRadioButtonId() == R.id.qn5yes)
             result = false;
-        if(mRadioGroupQ6.getCheckedRadioButtonId() == R.id.qn6yes)
+        else if(mRadioGroupQ6.getCheckedRadioButtonId() == R.id.qn6yes)
             result = false;
-        if(mRadioGroupQ7.getCheckedRadioButtonId() == R.id.qn7yes)
+        else if(mRadioGroupQ7.getCheckedRadioButtonId() == R.id.qn7yes)
             result = false;
-        if(mRadioGroupQ8.getCheckedRadioButtonId() == R.id.qn8yes)
+        else if(mRadioGroupQ8.getCheckedRadioButtonId() == R.id.qn8yes)
             result = false;
-        if(mRadioGroupQ9.getCheckedRadioButtonId() == R.id.qn9yes)
+        else if(mRadioGroupQ9.getCheckedRadioButtonId() == R.id.qn9yes)
             result = false;
-        if(mRadioGroupQ10.getCheckedRadioButtonId() == R.id.qn10yes)
+        else if(mRadioGroupQ10.getCheckedRadioButtonId() == R.id.qn10yes)
             result = false;
-
+    
         return result;
     }
 
