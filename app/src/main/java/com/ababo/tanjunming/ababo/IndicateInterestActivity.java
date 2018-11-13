@@ -1,9 +1,11 @@
 package com.ababo.tanjunming.ababo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,6 +16,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -27,6 +36,8 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
     private EditText mIdentificationNumberView;
     private EditText mContactNumberView;
     private EditText mEmailAddressView;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -78,7 +89,53 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
                 //add implementation code here
                 String selectedLocation = mInterestLocationSelectionSpinner.getSelectedItem().toString();
                 Log.d(getClass().getName(), selectedLocation);
-                startActivity(new Intent(IndicateInterestActivity.this, MainActivity.class));
+
+                String location = mInterestLocationSelectionSpinner.getSelectedItem().toString();
+
+                String name = mNameView.getText().toString();
+                String identification = mIdentificationNumberView.getText().toString();
+                String contact = mContactNumberView.getText().toString();
+                String email = mEmailAddressView.getText().toString();
+
+                Map<String, Object> dataToSave = new HashMap<>();
+                dataToSave.put("name", name);
+                dataToSave.put("nric", identification);
+                dataToSave.put("phone", contact);
+                dataToSave.put("email", email);
+                switch(location){
+                    case "North":
+                        db.collection("InterestNorth").add(dataToSave);
+                        break;
+                    case "South":
+                        db.collection("InterestSouth").add(dataToSave);
+                        break;
+                    case "East":
+                        db.collection("InterestEast").add(dataToSave);
+                        break;
+                    case "West":
+                        db.collection("InterestWest").add(dataToSave);
+                        break;
+                    case "Central":
+                        db.collection("InterestCentral").add(dataToSave);
+                        break;
+                }
+
+
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(IndicateInterestActivity.this);
+                builder.setCancelable(true);
+                builder.setTitle("");
+                builder.setMessage("Your Interest has been submitted");
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        startActivity(new Intent(IndicateInterestActivity.this, Donate.class));
+                    }
+                });
+
+                builder.show();
             }
         });
 

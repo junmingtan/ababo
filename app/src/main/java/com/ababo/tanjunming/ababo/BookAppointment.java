@@ -1,9 +1,11 @@
 package com.ababo.tanjunming.ababo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -99,6 +101,20 @@ public class BookAppointment extends AppCompatActivity {
             public void onClick(View view) {
                 //add implementation code here
                 Log.d(getClass().getName(), CreateAppointment());
+                AlertDialog.Builder builder = new AlertDialog.Builder(BookAppointment.this);
+
+                builder.setCancelable(true);
+                builder.setTitle("Appointment Confirmed");
+                builder.setMessage(CreateAppointment());
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        startActivity(new Intent(BookAppointment.this, Donate.class));
+                    }
+                });
+
+                builder.show();
             }
         });
 

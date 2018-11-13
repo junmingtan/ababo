@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "876778248940",
+    "firebase_url": "https://cz2006-ababo-application.firebaseio.com",
+    "project_id": "cz2006-ababo-application",
+    "storage_bucket": "cz2006-ababo-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876778248940:android:0880454632a21ee0",
+        "android_client_info": {
+          "package_name": "com.ababo.tanjunming.ababo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876778248940-qpsm5rn0p1i30qofqvufpnn2qgi9s608.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ababo.tanjunming.ababo",
+            "certificate_hash": "60692cca22ad4fcc0936c124825287cc070ff4cc"
+          }
+        },
+        {
+          "client_id": "876778248940-k44fvso207k93m8bbmtm2p7mrr3t23t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3xP8fDza4Uj57OzoGcYU2WPBch04gv4Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876778248940-k44fvso207k93m8bbmtm2p7mrr3t23t7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
