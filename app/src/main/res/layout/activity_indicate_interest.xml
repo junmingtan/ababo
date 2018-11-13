@@ -8,42 +8,89 @@
     tools:context=".IndicateInterestActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="392dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="311dp"
-            android:layout_height="98dp"
-            android:text="Indicate your interest so that we can organise a blood donation drive near you when enough people indicated their interest"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            tools:layout_editor_absoluteY="652dp" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/bookAppt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/mobileblood" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="right"
+                android:text="Indicate Interest"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose a location:"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="236dp" />
+            android:layout_marginBottom="10dp">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="368dp"
-            android:layout_height="55dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.499" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Indicate your interest in donating blood at a mobile bloodbank. When there are enough people that indicate their interest at the same zone, a mobile blood donation drive will be organised at the location."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:layout_editor_absoluteY="652dp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose a location:"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="236dp" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="368dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.499" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/button"
-            android:layout_width="193dp"
-            android:layout_height="81dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Submit Interest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button2"
