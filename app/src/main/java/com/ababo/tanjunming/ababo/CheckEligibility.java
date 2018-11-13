@@ -1,9 +1,11 @@
 package com.ababo.tanjunming.ababo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +27,7 @@ public class CheckEligibility extends AppCompatActivity {
     private  RadioGroup mRadioGroupQ8;
     private  RadioGroup mRadioGroupQ9;
     private  RadioGroup mRadioGroupQ10;
+    View focusView = null;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -68,8 +71,45 @@ public class CheckEligibility extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(checkCompleted()){
-                    if(verifyEligibility())
-                        startActivity(new Intent(CheckEligibility.this, MainActivity.class));
+                    if(verifyEligibility()){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(CheckEligibility.this);
+
+                        builder.setCancelable(true);
+                        builder.setTitle("Congratulations!");
+                        builder.setMessage("You are eligible to donate blood.");
+
+                        builder.setPositiveButton("Indicate Interest", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                startActivity(new Intent(CheckEligibility.this, IndicateInterestActivity.class));
+                            }
+                        });
+
+                        builder.setNegativeButton("Book Appointment", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(CheckEligibility.this, BookAppointment.class));
+                            }
+                        });
+
+                        builder.show();
+                    }
+                    else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(CheckEligibility.this);
+
+                        builder.setCancelable(true);
+                        builder.setTitle("");
+                        builder.setMessage("Sorry you are not eligible to donate.");
+
+                        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                dialogInterface.cancel();
+                            }
+                        });
+                        builder.show();
+
+                    }
                 }
             }
         });

@@ -21,6 +21,7 @@ public class Explore extends AppCompatActivity {
 
     private MapView mMapView;
     private Button mCheckLocationButton;
+    private Button mCheckBloodReserveButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,6 +57,14 @@ public class Explore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Explore.this, MapsActivity.class));
+            }
+        });
+
+        mCheckBloodReserveButton = (Button) findViewById(R.id.checklevel);
+        mCheckBloodReserveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Explore.this, CheckBloodReserve.class));
             }
         });
 

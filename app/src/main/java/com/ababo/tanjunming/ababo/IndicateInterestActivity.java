@@ -78,6 +78,7 @@ public class IndicateInterestActivity extends AppCompatActivity implements Adapt
                 //add implementation code here
                 String selectedLocation = mInterestLocationSelectionSpinner.getSelectedItem().toString();
                 Log.d(getClass().getName(), selectedLocation);
+                startActivity(new Intent(IndicateInterestActivity.this, MainActivity.class));
             }
         });
 
