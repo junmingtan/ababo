@@ -10,9 +10,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,15 +19,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/checkEligibility"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp">
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/checkelig"
@@ -79,9 +74,7 @@
                 android:id="@+id/bookAppt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp">
+                android:layout_marginTop="12dp">
 
                 <Button
                     android:id="@+id/bookappt"
@@ -127,9 +120,7 @@
                 android:id="@+id/indicateInterest"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="12dp">
 
                 <Button
