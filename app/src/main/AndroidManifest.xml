@@ -75,7 +75,10 @@
             android:label="@string/title_activity_book_appointment" />
         <activity
             android:name=".CheckBloodReserve"
-            android:label="@string/title_activity_check_blood_reserve"></activity>
+            android:label="@string/title_activity_check_blood_reserve" />
+        <activity
+            android:name=".UpcomingAppointment"
+            android:label="@string/title_activity_upcoming_appointment"></activity>
     </application>
 
 </manifest>

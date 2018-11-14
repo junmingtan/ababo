@@ -79,7 +79,8 @@ public class BookAppointment extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                appointmentDate = dayOfMonth + "/" + month + "/" + year;
+                int correctedmonth = month + 1;
+                appointmentDate = dayOfMonth + "/" + correctedmonth + "/" + year;
             }
         });
 
@@ -102,6 +103,9 @@ public class BookAppointment extends AppCompatActivity {
                 //add implementation code here
                 Log.d(getClass().getName(), CreateAppointment());
                 AlertDialog.Builder builder = new AlertDialog.Builder(BookAppointment.this);
+
+                NextAppointment.setAppointmentDate(appointmentDate);
+                NextAppointment.setAppointmentLocation(bloodbankSelectionSpinner.getSelectedItem().toString());
 
                 builder.setCancelable(true);
                 builder.setTitle("Appointment Confirmed");

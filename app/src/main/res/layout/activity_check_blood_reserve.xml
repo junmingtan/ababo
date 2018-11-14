@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Last Blood Stock Update: 13 Nov 2018"
+                android:text="Last Blood Stock Update: 14 Nov 2018"
                 android:textAlignment="center" />
 
         </LinearLayout>

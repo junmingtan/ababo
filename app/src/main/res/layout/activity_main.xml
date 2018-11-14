@@ -242,6 +242,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp">
 
+                <Button
+                    android:id="@+id/upcomingapptbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -257,13 +263,12 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView24"
+                        android:id="@+id/displayUA"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="29 Janurary 2018 - BloodBank@HSA" />
+                        android:layout_marginBottom="10dp" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
